@@ -1,0 +1,70 @@
+Function isLeapYear(year)
+    If (year % 4 == 0 AND year % 100 != 0) OR (year % 400 == 0) then
+        Return True
+    Else
+        Return False
+
+Begin
+    Read year
+    If isLeapYear(year) then
+        Print "The year is a leap year."
+    Else
+        Print "The year is not a leap year."
+End
+Function ticketPricing(age)
+    If age <= 12 then
+        Return 10
+    Else if age >= 13 AND age <= 17 then
+        Return 15
+    Else
+        Return 20
+
+Begin
+    Read age
+    price ← ticketPricing(age)
+    Print "The ticket price is $" + price
+End
+Function fibonacci(n)
+    If n <= 0 then
+        Return 0
+    Else if n = 1 then
+        Return 1
+    Else
+        Return fibonacci(n-1) + fibonacci(n-2)
+
+Begin
+    Read n
+    Print "The " + n + "-th Fibonacci number is " + fibonacci(n)
+End
+Function isPalindrome(string)
+    string ← cleanString(string)  // Clean the string (remove spaces, punctuation, and convert to lowercase if needed)
+
+    Function checkPalindrome(string)
+        If length(string) <= 1 then
+            Return True
+        Else if string[0] ≠ string[last character of string] then
+            Return False
+        Else
+            Return checkPalindrome(substring(string, 1, length(string) - 2))
+
+    Return checkPalindrome(string)
+
+Begin
+    Read string
+    If isPalindrome(string) then
+        Print "The string is a palindrome."
+    Else
+        Print "The string is not a palindrome."
+End
+Function power(base, exponent)
+    If exponent = 0 then
+        Return 1
+    Else if exponent < 0 then
+        Return 1 / power(base, -exponent)
+    Else
+        Return base * power(base, exponent - 1)
+
+Begin
+    Read base, exponent
+    Print base + " raised to the power of " + exponent + " is " + power(base, exponent)
+End
